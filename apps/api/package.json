@@ -27,7 +27,7 @@
         "@workspace/contracts": "workspace:*",
         "@workspace/core": "workspace:*",
         "@workspace/database": "workspace:*",
-        "@zenstackhq/server": "^2.22.2",
+        "@zenstackhq/server": "^3.2.1",
         "dotenv": "^17.2.3",
         "express": "^5.2.1",
         "nestjs-cls": "^6.2.0",
