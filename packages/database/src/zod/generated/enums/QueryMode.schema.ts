@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
-export const QueryModeSchema = z.enum(["default", "insensitive"])
+export const QueryModeSchema = z.enum(['default', 'insensitive'])

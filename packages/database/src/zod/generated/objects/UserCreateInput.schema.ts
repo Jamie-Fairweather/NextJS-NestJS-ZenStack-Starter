@@ -4,13 +4,26 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
-import { ExampleCreateNestedManyWithoutOwnerInputObjectSchema } from './ExampleCreateNestedManyWithoutOwnerInput.schema';
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
+import { ExampleCreateNestedManyWithoutOwnerInputObjectSchema } from './ExampleCreateNestedManyWithoutOwnerInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserCreateInput, Prisma.UserCreateInput>;
-export const UserCreateInputObjectSchema: SchemaType = z.object({
-    id: z.string().optional().optional(), createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), authId: z.string(), role: z.lazy(() => RoleSchema).optional().optional(), examples: z.lazy(() => ExampleCreateNestedManyWithoutOwnerInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCreateInput, Prisma.UserCreateInput>
+export const UserCreateInputObjectSchema: SchemaType = z
+    .object({
+        id: z.string().optional().optional(),
+        createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        authId: z.string(),
+        role: z
+            .lazy(() => RoleSchema)
+            .optional()
+            .optional(),
+        examples: z
+            .lazy(() => ExampleCreateNestedManyWithoutOwnerInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

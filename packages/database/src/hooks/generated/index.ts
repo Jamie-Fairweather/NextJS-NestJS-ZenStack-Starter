@@ -4,8 +4,8 @@
 
 /* eslint-disable */
 
-export * from './user';
-export * from './example';
-export { getQueryKey } from '@zenstackhq/tanstack-query/runtime-v5';
-export { Provider } from '@zenstackhq/tanstack-query/runtime-v5/react';
-export { default as metadata } from './__model_meta';
+export * from './user'
+export * from './example'
+export { getQueryKey } from '@zenstackhq/tanstack-query/runtime-v5'
+export { Provider } from '@zenstackhq/tanstack-query/runtime-v5/react'
+export { default as metadata } from './__model_meta'

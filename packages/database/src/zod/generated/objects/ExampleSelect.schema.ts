@@ -4,13 +4,19 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserDefaultArgsObjectSchema } from './UserDefaultArgs.schema';
+import { z } from 'zod/v4'
+import { UserDefaultArgsObjectSchema } from './UserDefaultArgs.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleSelect, Prisma.ExampleSelect>;
-export const ExampleSelectObjectSchema: SchemaType = z.object({
-    id: z.boolean().optional().optional(), createdAt: z.boolean().optional().optional(), updatedAt: z.boolean().optional().optional(), ownerId: z.boolean().optional().optional(), owner: z.union([z.boolean(),
-    z.lazy(() => UserDefaultArgsObjectSchema)]).optional(), name: z.boolean().optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleSelect, Prisma.ExampleSelect>
+export const ExampleSelectObjectSchema: SchemaType = z
+    .object({
+        id: z.boolean().optional().optional(),
+        createdAt: z.boolean().optional().optional(),
+        updatedAt: z.boolean().optional().optional(),
+        ownerId: z.boolean().optional().optional(),
+        owner: z.union([z.boolean(), z.lazy(() => UserDefaultArgsObjectSchema)]).optional(),
+        name: z.boolean().optional().optional(),
+    })
+    .strict() as SchemaType

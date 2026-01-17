@@ -4,15 +4,27 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema';
-import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema';
-import { UserCreateOrConnectWithoutExamplesInputObjectSchema } from './UserCreateOrConnectWithoutExamplesInput.schema';
-import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema';
+import { z } from 'zod/v4'
+import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema'
+import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema'
+import { UserCreateOrConnectWithoutExamplesInputObjectSchema } from './UserCreateOrConnectWithoutExamplesInput.schema'
+import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserCreateNestedOneWithoutExamplesInput, Prisma.UserCreateNestedOneWithoutExamplesInput>;
-export const UserCreateNestedOneWithoutExamplesInputObjectSchema: SchemaType = z.object({
-    create: z.union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)]).optional(), connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutExamplesInputObjectSchema).optional().optional(), connect: z.lazy(() => UserWhereUniqueInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCreateNestedOneWithoutExamplesInput, Prisma.UserCreateNestedOneWithoutExamplesInput>
+export const UserCreateNestedOneWithoutExamplesInputObjectSchema: SchemaType = z
+    .object({
+        create: z
+            .union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)])
+            .optional(),
+        connectOrCreate: z
+            .lazy(() => UserCreateOrConnectWithoutExamplesInputObjectSchema)
+            .optional()
+            .optional(),
+        connect: z
+            .lazy(() => UserWhereUniqueInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

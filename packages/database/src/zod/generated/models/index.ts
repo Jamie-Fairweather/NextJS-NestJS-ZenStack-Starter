@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 
-export * from './User.schema';
-export * from './Example.schema';
-export * from './Auth.schema';
+export * from './User.schema'
+export * from './Example.schema'
+export * from './Auth.schema'

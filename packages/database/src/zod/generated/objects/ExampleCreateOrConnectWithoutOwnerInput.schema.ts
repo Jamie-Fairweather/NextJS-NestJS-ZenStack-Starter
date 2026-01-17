@@ -4,14 +4,20 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema';
-import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema';
-import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema';
+import { z } from 'zod/v4'
+import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema'
+import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema'
+import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleCreateOrConnectWithoutOwnerInput, Prisma.ExampleCreateOrConnectWithoutOwnerInput>;
-export const ExampleCreateOrConnectWithoutOwnerInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => ExampleWhereUniqueInputObjectSchema), create: z.union([z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleCreateOrConnectWithoutOwnerInput, Prisma.ExampleCreateOrConnectWithoutOwnerInput>
+export const ExampleCreateOrConnectWithoutOwnerInputObjectSchema: SchemaType = z
+    .object({
+        where: z.lazy(() => ExampleWhereUniqueInputObjectSchema),
+        create: z.union([
+            z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema),
+            z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema),
+        ]),
+    })
+    .strict() as SchemaType

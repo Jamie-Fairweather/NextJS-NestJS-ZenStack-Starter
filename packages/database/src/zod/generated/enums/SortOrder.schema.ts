@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
-export const SortOrderSchema = z.enum(["asc", "desc"])
+export const SortOrderSchema = z.enum(['asc', 'desc'])

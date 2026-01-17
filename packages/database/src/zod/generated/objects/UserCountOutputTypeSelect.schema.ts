@@ -4,12 +4,13 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
-
-type SchemaType = z.ZodType<Prisma.UserCountOutputTypeSelect, Prisma.UserCountOutputTypeSelect>;
-export const UserCountOutputTypeSelectObjectSchema: SchemaType = z.object({
-    examples: z.boolean().optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCountOutputTypeSelect, Prisma.UserCountOutputTypeSelect>
+export const UserCountOutputTypeSelectObjectSchema: SchemaType = z
+    .object({
+        examples: z.boolean().optional().optional(),
+    })
+    .strict() as SchemaType

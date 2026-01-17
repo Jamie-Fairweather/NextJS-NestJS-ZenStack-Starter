@@ -4,12 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.EnumRoleFieldUpdateOperationsInput, Prisma.EnumRoleFieldUpdateOperationsInput>;
-export const EnumRoleFieldUpdateOperationsInputObjectSchema: SchemaType = z.object({
-    set: z.lazy(() => RoleSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.EnumRoleFieldUpdateOperationsInput, Prisma.EnumRoleFieldUpdateOperationsInput>
+export const EnumRoleFieldUpdateOperationsInputObjectSchema: SchemaType = z
+    .object({
+        set: z
+            .lazy(() => RoleSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

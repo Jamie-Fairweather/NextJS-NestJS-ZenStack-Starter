@@ -4,15 +4,16 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleInputSchema } from '../input/ExampleInput.schema';
-import { UserCountOutputTypeDefaultArgsObjectSchema } from './UserCountOutputTypeDefaultArgs.schema';
+import { z } from 'zod/v4'
+import { ExampleInputSchema } from '../input/ExampleInput.schema'
+import { UserCountOutputTypeDefaultArgsObjectSchema } from './UserCountOutputTypeDefaultArgs.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserInclude, Prisma.UserInclude>;
-export const UserIncludeObjectSchema: SchemaType = z.object({
-    examples: z.union([z.boolean(),
-    z.lazy(() => ExampleInputSchema.findMany)]).optional(), _count: z.union([z.boolean(),
-    z.lazy(() => UserCountOutputTypeDefaultArgsObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserInclude, Prisma.UserInclude>
+export const UserIncludeObjectSchema: SchemaType = z
+    .object({
+        examples: z.union([z.boolean(), z.lazy(() => ExampleInputSchema.findMany)]).optional(),
+        _count: z.union([z.boolean(), z.lazy(() => UserCountOutputTypeDefaultArgsObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

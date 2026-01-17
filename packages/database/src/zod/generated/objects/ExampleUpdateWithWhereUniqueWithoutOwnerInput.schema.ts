@@ -4,14 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema';
-import { ExampleUpdateWithoutOwnerInputObjectSchema } from './ExampleUpdateWithoutOwnerInput.schema';
-import { ExampleUncheckedUpdateWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateWithoutOwnerInput.schema';
+import { z } from 'zod/v4'
+import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema'
+import { ExampleUpdateWithoutOwnerInputObjectSchema } from './ExampleUpdateWithoutOwnerInput.schema'
+import { ExampleUncheckedUpdateWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateWithoutOwnerInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleUpdateWithWhereUniqueWithoutOwnerInput, Prisma.ExampleUpdateWithWhereUniqueWithoutOwnerInput>;
-export const ExampleUpdateWithWhereUniqueWithoutOwnerInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => ExampleWhereUniqueInputObjectSchema), data: z.union([z.lazy(() => ExampleUpdateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedUpdateWithoutOwnerInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleUpdateWithWhereUniqueWithoutOwnerInput, Prisma.ExampleUpdateWithWhereUniqueWithoutOwnerInput>
+export const ExampleUpdateWithWhereUniqueWithoutOwnerInputObjectSchema: SchemaType = z
+    .object({
+        where: z.lazy(() => ExampleWhereUniqueInputObjectSchema),
+        data: z.union([z.lazy(() => ExampleUpdateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedUpdateWithoutOwnerInputObjectSchema)]),
+    })
+    .strict() as SchemaType

@@ -4,19 +4,42 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema';
-import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema';
-import { UserCreateOrConnectWithoutExamplesInputObjectSchema } from './UserCreateOrConnectWithoutExamplesInput.schema';
-import { UserUpsertWithoutExamplesInputObjectSchema } from './UserUpsertWithoutExamplesInput.schema';
-import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema';
-import { UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema } from './UserUpdateToOneWithWhereWithoutExamplesInput.schema';
-import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema';
-import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema';
+import { z } from 'zod/v4'
+import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema'
+import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema'
+import { UserCreateOrConnectWithoutExamplesInputObjectSchema } from './UserCreateOrConnectWithoutExamplesInput.schema'
+import { UserUpsertWithoutExamplesInputObjectSchema } from './UserUpsertWithoutExamplesInput.schema'
+import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema'
+import { UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema } from './UserUpdateToOneWithWhereWithoutExamplesInput.schema'
+import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema'
+import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserUpdateOneRequiredWithoutExamplesNestedInput, Prisma.UserUpdateOneRequiredWithoutExamplesNestedInput>;
-export const UserUpdateOneRequiredWithoutExamplesNestedInputObjectSchema: SchemaType = z.object({
-    create: z.union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)]).optional(), connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutExamplesInputObjectSchema).optional().optional(), upsert: z.lazy(() => UserUpsertWithoutExamplesInputObjectSchema).optional().optional(), connect: z.lazy(() => UserWhereUniqueInputObjectSchema).optional().optional(), update: z.union([z.lazy(() => UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema), z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserUpdateOneRequiredWithoutExamplesNestedInput, Prisma.UserUpdateOneRequiredWithoutExamplesNestedInput>
+export const UserUpdateOneRequiredWithoutExamplesNestedInputObjectSchema: SchemaType = z
+    .object({
+        create: z
+            .union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)])
+            .optional(),
+        connectOrCreate: z
+            .lazy(() => UserCreateOrConnectWithoutExamplesInputObjectSchema)
+            .optional()
+            .optional(),
+        upsert: z
+            .lazy(() => UserUpsertWithoutExamplesInputObjectSchema)
+            .optional()
+            .optional(),
+        connect: z
+            .lazy(() => UserWhereUniqueInputObjectSchema)
+            .optional()
+            .optional(),
+        update: z
+            .union([
+                z.lazy(() => UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema),
+                z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema),
+                z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema),
+            ])
+            .optional(),
+    })
+    .strict() as SchemaType

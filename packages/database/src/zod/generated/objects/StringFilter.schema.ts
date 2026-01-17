@@ -4,14 +4,29 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { QueryModeSchema } from '../enums/QueryMode.schema';
-import { NestedStringFilterObjectSchema } from './NestedStringFilter.schema';
+import { z } from 'zod/v4'
+import { QueryModeSchema } from '../enums/QueryMode.schema'
+import { NestedStringFilterObjectSchema } from './NestedStringFilter.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.StringFilter, Prisma.StringFilter>;
-export const StringFilterObjectSchema: SchemaType = z.object({
-    equals: z.string().optional().optional(), in: z.string().array().optional().optional(), notIn: z.string().array().optional().optional(), lt: z.string().optional().optional(), lte: z.string().optional().optional(), gt: z.string().optional().optional(), gte: z.string().optional().optional(), contains: z.string().optional().optional(), startsWith: z.string().optional().optional(), endsWith: z.string().optional().optional(), mode: z.lazy(() => QueryModeSchema).optional().optional(), not: z.union([z.string(),
-    z.lazy(() => NestedStringFilterObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.StringFilter, Prisma.StringFilter>
+export const StringFilterObjectSchema: SchemaType = z
+    .object({
+        equals: z.string().optional().optional(),
+        in: z.string().array().optional().optional(),
+        notIn: z.string().array().optional().optional(),
+        lt: z.string().optional().optional(),
+        lte: z.string().optional().optional(),
+        gt: z.string().optional().optional(),
+        gte: z.string().optional().optional(),
+        contains: z.string().optional().optional(),
+        startsWith: z.string().optional().optional(),
+        endsWith: z.string().optional().optional(),
+        mode: z
+            .lazy(() => QueryModeSchema)
+            .optional()
+            .optional(),
+        not: z.union([z.string(), z.lazy(() => NestedStringFilterObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

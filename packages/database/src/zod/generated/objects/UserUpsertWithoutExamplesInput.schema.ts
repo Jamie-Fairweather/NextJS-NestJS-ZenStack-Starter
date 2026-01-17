@@ -4,16 +4,29 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema';
-import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema';
-import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema';
-import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema';
-import { UserWhereInputObjectSchema } from './UserWhereInput.schema';
+import { z } from 'zod/v4'
+import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema'
+import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema'
+import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema'
+import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema'
+import { UserWhereInputObjectSchema } from './UserWhereInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserUpsertWithoutExamplesInput, Prisma.UserUpsertWithoutExamplesInput>;
-export const UserUpsertWithoutExamplesInputObjectSchema: SchemaType = z.object({
-    update: z.union([z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema)]), create: z.union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)]), where: z.lazy(() => UserWhereInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserUpsertWithoutExamplesInput, Prisma.UserUpsertWithoutExamplesInput>
+export const UserUpsertWithoutExamplesInputObjectSchema: SchemaType = z
+    .object({
+        update: z.union([
+            z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema),
+            z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema),
+        ]),
+        create: z.union([
+            z.lazy(() => UserCreateWithoutExamplesInputObjectSchema),
+            z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema),
+        ]),
+        where: z
+            .lazy(() => UserWhereInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

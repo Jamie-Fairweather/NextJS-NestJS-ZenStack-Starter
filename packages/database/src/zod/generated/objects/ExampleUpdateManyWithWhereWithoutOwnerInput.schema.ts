@@ -4,14 +4,20 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleScalarWhereInputObjectSchema } from './ExampleScalarWhereInput.schema';
-import { ExampleUpdateManyMutationInputObjectSchema } from './ExampleUpdateManyMutationInput.schema';
-import { ExampleUncheckedUpdateManyWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateManyWithoutOwnerInput.schema';
+import { z } from 'zod/v4'
+import { ExampleScalarWhereInputObjectSchema } from './ExampleScalarWhereInput.schema'
+import { ExampleUpdateManyMutationInputObjectSchema } from './ExampleUpdateManyMutationInput.schema'
+import { ExampleUncheckedUpdateManyWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateManyWithoutOwnerInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleUpdateManyWithWhereWithoutOwnerInput, Prisma.ExampleUpdateManyWithWhereWithoutOwnerInput>;
-export const ExampleUpdateManyWithWhereWithoutOwnerInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => ExampleScalarWhereInputObjectSchema), data: z.union([z.lazy(() => ExampleUpdateManyMutationInputObjectSchema), z.lazy(() => ExampleUncheckedUpdateManyWithoutOwnerInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleUpdateManyWithWhereWithoutOwnerInput, Prisma.ExampleUpdateManyWithWhereWithoutOwnerInput>
+export const ExampleUpdateManyWithWhereWithoutOwnerInputObjectSchema: SchemaType = z
+    .object({
+        where: z.lazy(() => ExampleScalarWhereInputObjectSchema),
+        data: z.union([
+            z.lazy(() => ExampleUpdateManyMutationInputObjectSchema),
+            z.lazy(() => ExampleUncheckedUpdateManyWithoutOwnerInputObjectSchema),
+        ]),
+    })
+    .strict() as SchemaType

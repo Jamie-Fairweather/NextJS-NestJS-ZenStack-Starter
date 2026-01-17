@@ -4,18 +4,36 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema';
-import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema';
-import { ExampleCreateOrConnectWithoutOwnerInputObjectSchema } from './ExampleCreateOrConnectWithoutOwnerInput.schema';
-import { ExampleCreateManyOwnerInputEnvelopeObjectSchema } from './ExampleCreateManyOwnerInputEnvelope.schema';
-import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema';
+import { z } from 'zod/v4'
+import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema'
+import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema'
+import { ExampleCreateOrConnectWithoutOwnerInputObjectSchema } from './ExampleCreateOrConnectWithoutOwnerInput.schema'
+import { ExampleCreateManyOwnerInputEnvelopeObjectSchema } from './ExampleCreateManyOwnerInputEnvelope.schema'
+import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleCreateNestedManyWithoutOwnerInput, Prisma.ExampleCreateNestedManyWithoutOwnerInput>;
-export const ExampleCreateNestedManyWithoutOwnerInputObjectSchema: SchemaType = z.object({
-    create: z.union([z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema).array(), z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema).array()]).optional(), connectOrCreate: z.union([z.lazy(() => ExampleCreateOrConnectWithoutOwnerInputObjectSchema),
-    z.lazy(() => ExampleCreateOrConnectWithoutOwnerInputObjectSchema).array()]).optional(), createMany: z.lazy(() => ExampleCreateManyOwnerInputEnvelopeObjectSchema).optional().optional(), connect: z.union([z.lazy(() => ExampleWhereUniqueInputObjectSchema),
-    z.lazy(() => ExampleWhereUniqueInputObjectSchema).array()]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleCreateNestedManyWithoutOwnerInput, Prisma.ExampleCreateNestedManyWithoutOwnerInput>
+export const ExampleCreateNestedManyWithoutOwnerInputObjectSchema: SchemaType = z
+    .object({
+        create: z
+            .union([
+                z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema),
+                z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema).array(),
+                z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema),
+                z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema).array(),
+            ])
+            .optional(),
+        connectOrCreate: z
+            .union([
+                z.lazy(() => ExampleCreateOrConnectWithoutOwnerInputObjectSchema),
+                z.lazy(() => ExampleCreateOrConnectWithoutOwnerInputObjectSchema).array(),
+            ])
+            .optional(),
+        createMany: z
+            .lazy(() => ExampleCreateManyOwnerInputEnvelopeObjectSchema)
+            .optional()
+            .optional(),
+        connect: z.union([z.lazy(() => ExampleWhereUniqueInputObjectSchema), z.lazy(() => ExampleWhereUniqueInputObjectSchema).array()]).optional(),
+    })
+    .strict() as SchemaType

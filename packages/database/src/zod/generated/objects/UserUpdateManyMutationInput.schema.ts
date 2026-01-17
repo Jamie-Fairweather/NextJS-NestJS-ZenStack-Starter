@@ -4,20 +4,25 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { StringFieldUpdateOperationsInputObjectSchema } from './StringFieldUpdateOperationsInput.schema';
-import { DateTimeFieldUpdateOperationsInputObjectSchema } from './DateTimeFieldUpdateOperationsInput.schema';
-import { RoleSchema } from '../enums/Role.schema';
-import { EnumRoleFieldUpdateOperationsInputObjectSchema } from './EnumRoleFieldUpdateOperationsInput.schema';
+import { z } from 'zod/v4'
+import { StringFieldUpdateOperationsInputObjectSchema } from './StringFieldUpdateOperationsInput.schema'
+import { DateTimeFieldUpdateOperationsInputObjectSchema } from './DateTimeFieldUpdateOperationsInput.schema'
+import { RoleSchema } from '../enums/Role.schema'
+import { EnumRoleFieldUpdateOperationsInputObjectSchema } from './EnumRoleFieldUpdateOperationsInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserUpdateManyMutationInput, Prisma.UserUpdateManyMutationInput>;
-export const UserUpdateManyMutationInputObjectSchema: SchemaType = z.object({
-    id: z.union([z.string(),
-    z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(), createdAt: z.union([z.union([z.date(), z.string().datetime().optional()]),
-    z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(), updatedAt: z.union([z.union([z.date(), z.string().datetime().optional()]),
-    z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(), authId: z.union([z.string(),
-    z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(), role: z.union([z.lazy(() => RoleSchema),
-    z.lazy(() => EnumRoleFieldUpdateOperationsInputObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserUpdateManyMutationInput, Prisma.UserUpdateManyMutationInput>
+export const UserUpdateManyMutationInputObjectSchema: SchemaType = z
+    .object({
+        id: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
+        createdAt: z
+            .union([z.union([z.date(), z.string().datetime().optional()]), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)])
+            .optional(),
+        updatedAt: z
+            .union([z.union([z.date(), z.string().datetime().optional()]), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)])
+            .optional(),
+        authId: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
+        role: z.union([z.lazy(() => RoleSchema), z.lazy(() => EnumRoleFieldUpdateOperationsInputObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

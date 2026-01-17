@@ -4,12 +4,25 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleWhereInputObjectSchema } from './ExampleWhereInput.schema';
+import { z } from 'zod/v4'
+import { ExampleWhereInputObjectSchema } from './ExampleWhereInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleListRelationFilter, Prisma.ExampleListRelationFilter>;
-export const ExampleListRelationFilterObjectSchema: SchemaType = z.object({
-    every: z.lazy(() => ExampleWhereInputObjectSchema).optional().optional(), some: z.lazy(() => ExampleWhereInputObjectSchema).optional().optional(), none: z.lazy(() => ExampleWhereInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleListRelationFilter, Prisma.ExampleListRelationFilter>
+export const ExampleListRelationFilterObjectSchema: SchemaType = z
+    .object({
+        every: z
+            .lazy(() => ExampleWhereInputObjectSchema)
+            .optional()
+            .optional(),
+        some: z
+            .lazy(() => ExampleWhereInputObjectSchema)
+            .optional()
+            .optional(),
+        none: z
+            .lazy(() => ExampleWhereInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

@@ -4,14 +4,36 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema';
-import { NestedDateTimeFilterObjectSchema } from './NestedDateTimeFilter.schema';
+import { z } from 'zod/v4'
+import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema'
+import { NestedDateTimeFilterObjectSchema } from './NestedDateTimeFilter.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.NestedDateTimeWithAggregatesFilter, Prisma.NestedDateTimeWithAggregatesFilter>;
-export const NestedDateTimeWithAggregatesFilterObjectSchema: SchemaType = z.object({
-    equals: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), in: z.union([z.date().array().optional(), z.string().datetime().array().optional()]).optional(), notIn: z.union([z.date().array().optional(), z.string().datetime().array().optional()]).optional(), lt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), lte: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), gt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), gte: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), not: z.union([z.union([z.date(), z.string().datetime().optional()]),
-    z.lazy(() => NestedDateTimeWithAggregatesFilterObjectSchema)]).optional(), _count: z.lazy(() => NestedIntFilterObjectSchema).optional().optional(), _min: z.lazy(() => NestedDateTimeFilterObjectSchema).optional().optional(), _max: z.lazy(() => NestedDateTimeFilterObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.NestedDateTimeWithAggregatesFilter, Prisma.NestedDateTimeWithAggregatesFilter>
+export const NestedDateTimeWithAggregatesFilterObjectSchema: SchemaType = z
+    .object({
+        equals: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        in: z.union([z.date().array().optional(), z.string().datetime().array().optional()]).optional(),
+        notIn: z.union([z.date().array().optional(), z.string().datetime().array().optional()]).optional(),
+        lt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        lte: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        gt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        gte: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        not: z
+            .union([z.union([z.date(), z.string().datetime().optional()]), z.lazy(() => NestedDateTimeWithAggregatesFilterObjectSchema)])
+            .optional(),
+        _count: z
+            .lazy(() => NestedIntFilterObjectSchema)
+            .optional()
+            .optional(),
+        _min: z
+            .lazy(() => NestedDateTimeFilterObjectSchema)
+            .optional()
+            .optional(),
+        _max: z
+            .lazy(() => NestedDateTimeFilterObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

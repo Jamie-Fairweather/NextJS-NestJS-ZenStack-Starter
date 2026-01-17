@@ -4,12 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { SortOrderSchema } from '../enums/SortOrder.schema';
+import { z } from 'zod/v4'
+import { SortOrderSchema } from '../enums/SortOrder.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleOrderByRelationAggregateInput, Prisma.ExampleOrderByRelationAggregateInput>;
-export const ExampleOrderByRelationAggregateInputObjectSchema: SchemaType = z.object({
-    _count: z.lazy(() => SortOrderSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleOrderByRelationAggregateInput, Prisma.ExampleOrderByRelationAggregateInput>
+export const ExampleOrderByRelationAggregateInputObjectSchema: SchemaType = z
+    .object({
+        _count: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

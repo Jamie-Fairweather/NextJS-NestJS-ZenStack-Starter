@@ -4,85 +4,87 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
-const baseSchema = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date().default(() => new Date()),
-    updatedAt: z.coerce.date(),
-    authId: z.string(),
-    role: RoleSchema.default("USER"),
-}
-).strict();
-const baseSchemaWithoutDefaults = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date(),
-    updatedAt: z.coerce.date(),
-    authId: z.string(),
-    role: RoleSchema,
-}
-).strict();
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
+const baseSchema = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date().default(() => new Date()),
+        updatedAt: z.coerce.date(),
+        authId: z.string(),
+        role: RoleSchema.default('USER'),
+    })
+    .strict()
+const baseSchemaWithoutDefaults = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date(),
+        updatedAt: z.coerce.date(),
+        authId: z.string(),
+        role: RoleSchema,
+    })
+    .strict()
 const relationSchema = z.object({
     examples: z.array(z.unknown()).optional(),
-}
-);
+})
 
 /**
  * `User` schema excluding foreign keys and relations.
  */
-export const UserScalarSchema = baseSchema;
-
+export const UserScalarSchema = baseSchema
 
 /**
  * `User` schema including all fields (scalar, foreign key, and relations) and validations.
  */
-export const UserSchema = UserScalarSchema.merge(relationSchema.partial());
-
+export const UserSchema = UserScalarSchema.merge(relationSchema.partial())
 
 /**
  * Schema used for validating Prisma create input. For internal use only.
  * @private
  */
-export const UserPrismaCreateSchema = baseSchemaWithoutDefaults.partial().passthrough();
-
+export const UserPrismaCreateSchema = baseSchemaWithoutDefaults.partial().passthrough()
 
 /**
  * Schema used for validating Prisma update input. For internal use only.
  * @private
  */
-export const UserPrismaUpdateSchema = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date(),
-    updatedAt: z.coerce.date(),
-    authId: z.string(),
-    role: RoleSchema
-}).partial().passthrough();
-
+export const UserPrismaUpdateSchema = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date(),
+        updatedAt: z.coerce.date(),
+        authId: z.string(),
+        role: RoleSchema,
+    })
+    .partial()
+    .passthrough()
 
 /**
  * `User` schema for create operations excluding foreign keys and relations.
  */
 export const UserCreateScalarSchema = baseSchemaWithoutDefaults.partial({
-    id: true, createdAt: true, updatedAt: true, role: true
-});
-
+    id: true,
+    createdAt: true,
+    updatedAt: true,
+    role: true,
+})
 
 /**
  * `User` schema for create operations including scalar fields, foreign key fields, and validations.
  */
 export const UserCreateSchema = baseSchemaWithoutDefaults.partial({
-    id: true, createdAt: true, updatedAt: true, role: true
-});
-
+    id: true,
+    createdAt: true,
+    updatedAt: true,
+    role: true,
+})
 
 /**
  * `User` schema for update operations excluding foreign keys and relations.
  */
-export const UserUpdateScalarSchema = baseSchemaWithoutDefaults.partial();
-
+export const UserUpdateScalarSchema = baseSchemaWithoutDefaults.partial()
 
 /**
  * `User` schema for update operations including scalar fields, foreign key fields, and validations.
  */
-export const UserUpdateSchema = UserUpdateScalarSchema;
-
+export const UserUpdateSchema = UserUpdateScalarSchema

@@ -4,12 +4,21 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserCreateWithoutExamplesInput, Prisma.UserCreateWithoutExamplesInput>;
-export const UserCreateWithoutExamplesInputObjectSchema: SchemaType = z.object({
-    id: z.string().optional().optional(), createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), authId: z.string(), role: z.lazy(() => RoleSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCreateWithoutExamplesInput, Prisma.UserCreateWithoutExamplesInput>
+export const UserCreateWithoutExamplesInputObjectSchema: SchemaType = z
+    .object({
+        id: z.string().optional().optional(),
+        createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        authId: z.string(),
+        role: z
+            .lazy(() => RoleSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

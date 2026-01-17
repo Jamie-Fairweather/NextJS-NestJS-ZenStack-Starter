@@ -4,13 +4,14 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserDefaultArgsObjectSchema } from './UserDefaultArgs.schema';
+import { z } from 'zod/v4'
+import { UserDefaultArgsObjectSchema } from './UserDefaultArgs.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleInclude, Prisma.ExampleInclude>;
-export const ExampleIncludeObjectSchema: SchemaType = z.object({
-    owner: z.union([z.boolean(),
-    z.lazy(() => UserDefaultArgsObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleInclude, Prisma.ExampleInclude>
+export const ExampleIncludeObjectSchema: SchemaType = z
+    .object({
+        owner: z.union([z.boolean(), z.lazy(() => UserDefaultArgsObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

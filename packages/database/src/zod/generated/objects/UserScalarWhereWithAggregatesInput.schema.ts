@@ -4,22 +4,42 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { StringWithAggregatesFilterObjectSchema } from './StringWithAggregatesFilter.schema';
-import { DateTimeWithAggregatesFilterObjectSchema } from './DateTimeWithAggregatesFilter.schema';
-import { EnumRoleWithAggregatesFilterObjectSchema } from './EnumRoleWithAggregatesFilter.schema';
-import { RoleSchema } from '../enums/Role.schema';
+import { z } from 'zod/v4'
+import { StringWithAggregatesFilterObjectSchema } from './StringWithAggregatesFilter.schema'
+import { DateTimeWithAggregatesFilterObjectSchema } from './DateTimeWithAggregatesFilter.schema'
+import { EnumRoleWithAggregatesFilterObjectSchema } from './EnumRoleWithAggregatesFilter.schema'
+import { RoleSchema } from '../enums/Role.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserScalarWhereWithAggregatesInput, Prisma.UserScalarWhereWithAggregatesInput>;
-export const UserScalarWhereWithAggregatesInputObjectSchema: SchemaType = z.object({
-    AND: z.union([z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema),
-    z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema).array()]).optional(), OR: z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema).array().optional().optional(), NOT: z.union([z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema),
-    z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema).array()]).optional(), id: z.union([z.lazy(() => StringWithAggregatesFilterObjectSchema),
-    z.string()]).optional(), createdAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), updatedAt: z.union([z.lazy(() => DateTimeWithAggregatesFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), authId: z.union([z.lazy(() => StringWithAggregatesFilterObjectSchema),
-    z.string()]).optional(), role: z.union([z.lazy(() => EnumRoleWithAggregatesFilterObjectSchema),
-    z.lazy(() => RoleSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserScalarWhereWithAggregatesInput, Prisma.UserScalarWhereWithAggregatesInput>
+export const UserScalarWhereWithAggregatesInputObjectSchema: SchemaType = z
+    .object({
+        AND: z
+            .union([
+                z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema),
+                z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema).array(),
+            ])
+            .optional(),
+        OR: z
+            .lazy(() => UserScalarWhereWithAggregatesInputObjectSchema)
+            .array()
+            .optional()
+            .optional(),
+        NOT: z
+            .union([
+                z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema),
+                z.lazy(() => UserScalarWhereWithAggregatesInputObjectSchema).array(),
+            ])
+            .optional(),
+        id: z.union([z.lazy(() => StringWithAggregatesFilterObjectSchema), z.string()]).optional(),
+        createdAt: z
+            .union([z.lazy(() => DateTimeWithAggregatesFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])])
+            .optional(),
+        updatedAt: z
+            .union([z.lazy(() => DateTimeWithAggregatesFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])])
+            .optional(),
+        authId: z.union([z.lazy(() => StringWithAggregatesFilterObjectSchema), z.string()]).optional(),
+        role: z.union([z.lazy(() => EnumRoleWithAggregatesFilterObjectSchema), z.lazy(() => RoleSchema)]).optional(),
+    })
+    .strict() as SchemaType

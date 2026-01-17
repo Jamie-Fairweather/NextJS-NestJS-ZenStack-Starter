@@ -4,15 +4,48 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { SortOrderSchema } from '../enums/SortOrder.schema';
-import { ExampleCountOrderByAggregateInputObjectSchema } from './ExampleCountOrderByAggregateInput.schema';
-import { ExampleMaxOrderByAggregateInputObjectSchema } from './ExampleMaxOrderByAggregateInput.schema';
-import { ExampleMinOrderByAggregateInputObjectSchema } from './ExampleMinOrderByAggregateInput.schema';
+import { z } from 'zod/v4'
+import { SortOrderSchema } from '../enums/SortOrder.schema'
+import { ExampleCountOrderByAggregateInputObjectSchema } from './ExampleCountOrderByAggregateInput.schema'
+import { ExampleMaxOrderByAggregateInputObjectSchema } from './ExampleMaxOrderByAggregateInput.schema'
+import { ExampleMinOrderByAggregateInputObjectSchema } from './ExampleMinOrderByAggregateInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleOrderByWithAggregationInput, Prisma.ExampleOrderByWithAggregationInput>;
-export const ExampleOrderByWithAggregationInputObjectSchema: SchemaType = z.object({
-    id: z.lazy(() => SortOrderSchema).optional().optional(), createdAt: z.lazy(() => SortOrderSchema).optional().optional(), updatedAt: z.lazy(() => SortOrderSchema).optional().optional(), ownerId: z.lazy(() => SortOrderSchema).optional().optional(), name: z.lazy(() => SortOrderSchema).optional().optional(), _count: z.lazy(() => ExampleCountOrderByAggregateInputObjectSchema).optional().optional(), _max: z.lazy(() => ExampleMaxOrderByAggregateInputObjectSchema).optional().optional(), _min: z.lazy(() => ExampleMinOrderByAggregateInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleOrderByWithAggregationInput, Prisma.ExampleOrderByWithAggregationInput>
+export const ExampleOrderByWithAggregationInputObjectSchema: SchemaType = z
+    .object({
+        id: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        createdAt: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        updatedAt: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        ownerId: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        name: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        _count: z
+            .lazy(() => ExampleCountOrderByAggregateInputObjectSchema)
+            .optional()
+            .optional(),
+        _max: z
+            .lazy(() => ExampleMaxOrderByAggregateInputObjectSchema)
+            .optional()
+            .optional(),
+        _min: z
+            .lazy(() => ExampleMinOrderByAggregateInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

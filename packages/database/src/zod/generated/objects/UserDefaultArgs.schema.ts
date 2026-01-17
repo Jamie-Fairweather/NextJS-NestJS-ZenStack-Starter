@@ -4,13 +4,22 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserSelectObjectSchema } from './UserSelect.schema';
-import { UserIncludeObjectSchema } from './UserInclude.schema';
+import { z } from 'zod/v4'
+import { UserSelectObjectSchema } from './UserSelect.schema'
+import { UserIncludeObjectSchema } from './UserInclude.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserDefaultArgs, Prisma.UserDefaultArgs>;
-export const UserDefaultArgsObjectSchema: SchemaType = z.object({
-    select: z.lazy(() => UserSelectObjectSchema).optional().optional(), include: z.lazy(() => UserIncludeObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserDefaultArgs, Prisma.UserDefaultArgs>
+export const UserDefaultArgsObjectSchema: SchemaType = z
+    .object({
+        select: z
+            .lazy(() => UserSelectObjectSchema)
+            .optional()
+            .optional(),
+        include: z
+            .lazy(() => UserIncludeObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

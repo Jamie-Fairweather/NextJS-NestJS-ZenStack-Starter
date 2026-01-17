@@ -4,16 +4,26 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema';
-import { ExampleUpdateWithoutOwnerInputObjectSchema } from './ExampleUpdateWithoutOwnerInput.schema';
-import { ExampleUncheckedUpdateWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateWithoutOwnerInput.schema';
-import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema';
-import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema';
+import { z } from 'zod/v4'
+import { ExampleWhereUniqueInputObjectSchema } from './ExampleWhereUniqueInput.schema'
+import { ExampleUpdateWithoutOwnerInputObjectSchema } from './ExampleUpdateWithoutOwnerInput.schema'
+import { ExampleUncheckedUpdateWithoutOwnerInputObjectSchema } from './ExampleUncheckedUpdateWithoutOwnerInput.schema'
+import { ExampleCreateWithoutOwnerInputObjectSchema } from './ExampleCreateWithoutOwnerInput.schema'
+import { ExampleUncheckedCreateWithoutOwnerInputObjectSchema } from './ExampleUncheckedCreateWithoutOwnerInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleUpsertWithWhereUniqueWithoutOwnerInput, Prisma.ExampleUpsertWithWhereUniqueWithoutOwnerInput>;
-export const ExampleUpsertWithWhereUniqueWithoutOwnerInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => ExampleWhereUniqueInputObjectSchema), update: z.union([z.lazy(() => ExampleUpdateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedUpdateWithoutOwnerInputObjectSchema)]), create: z.union([z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema), z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleUpsertWithWhereUniqueWithoutOwnerInput, Prisma.ExampleUpsertWithWhereUniqueWithoutOwnerInput>
+export const ExampleUpsertWithWhereUniqueWithoutOwnerInputObjectSchema: SchemaType = z
+    .object({
+        where: z.lazy(() => ExampleWhereUniqueInputObjectSchema),
+        update: z.union([
+            z.lazy(() => ExampleUpdateWithoutOwnerInputObjectSchema),
+            z.lazy(() => ExampleUncheckedUpdateWithoutOwnerInputObjectSchema),
+        ]),
+        create: z.union([
+            z.lazy(() => ExampleCreateWithoutOwnerInputObjectSchema),
+            z.lazy(() => ExampleUncheckedCreateWithoutOwnerInputObjectSchema),
+        ]),
+    })
+    .strict() as SchemaType

@@ -4,13 +4,28 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.NestedEnumRoleFilter, Prisma.NestedEnumRoleFilter>;
-export const NestedEnumRoleFilterObjectSchema: SchemaType = z.object({
-    equals: z.lazy(() => RoleSchema).optional().optional(), in: z.lazy(() => RoleSchema).array().optional().optional(), notIn: z.lazy(() => RoleSchema).array().optional().optional(), not: z.union([z.lazy(() => RoleSchema),
-    z.lazy(() => NestedEnumRoleFilterObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.NestedEnumRoleFilter, Prisma.NestedEnumRoleFilter>
+export const NestedEnumRoleFilterObjectSchema: SchemaType = z
+    .object({
+        equals: z
+            .lazy(() => RoleSchema)
+            .optional()
+            .optional(),
+        in: z
+            .lazy(() => RoleSchema)
+            .array()
+            .optional()
+            .optional(),
+        notIn: z
+            .lazy(() => RoleSchema)
+            .array()
+            .optional()
+            .optional(),
+        not: z.union([z.lazy(() => RoleSchema), z.lazy(() => NestedEnumRoleFilterObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

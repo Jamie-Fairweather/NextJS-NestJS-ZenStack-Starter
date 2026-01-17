@@ -4,12 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserCountOutputTypeSelectObjectSchema } from './UserCountOutputTypeSelect.schema';
+import { z } from 'zod/v4'
+import { UserCountOutputTypeSelectObjectSchema } from './UserCountOutputTypeSelect.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserCountOutputTypeDefaultArgs, Prisma.UserCountOutputTypeDefaultArgs>;
-export const UserCountOutputTypeDefaultArgsObjectSchema: SchemaType = z.object({
-    select: z.lazy(() => UserCountOutputTypeSelectObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCountOutputTypeDefaultArgs, Prisma.UserCountOutputTypeDefaultArgs>
+export const UserCountOutputTypeDefaultArgsObjectSchema: SchemaType = z
+    .object({
+        select: z
+            .lazy(() => UserCountOutputTypeSelectObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

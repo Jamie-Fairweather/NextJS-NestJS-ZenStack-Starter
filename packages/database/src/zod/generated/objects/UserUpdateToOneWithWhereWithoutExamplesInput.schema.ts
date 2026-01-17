@@ -4,14 +4,20 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserWhereInputObjectSchema } from './UserWhereInput.schema';
-import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema';
-import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema';
+import { z } from 'zod/v4'
+import { UserWhereInputObjectSchema } from './UserWhereInput.schema'
+import { UserUpdateWithoutExamplesInputObjectSchema } from './UserUpdateWithoutExamplesInput.schema'
+import { UserUncheckedUpdateWithoutExamplesInputObjectSchema } from './UserUncheckedUpdateWithoutExamplesInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutExamplesInput, Prisma.UserUpdateToOneWithWhereWithoutExamplesInput>;
-export const UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => UserWhereInputObjectSchema).optional().optional(), data: z.union([z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutExamplesInput, Prisma.UserUpdateToOneWithWhereWithoutExamplesInput>
+export const UserUpdateToOneWithWhereWithoutExamplesInputObjectSchema: SchemaType = z
+    .object({
+        where: z
+            .lazy(() => UserWhereInputObjectSchema)
+            .optional()
+            .optional(),
+        data: z.union([z.lazy(() => UserUpdateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedUpdateWithoutExamplesInputObjectSchema)]),
+    })
+    .strict() as SchemaType

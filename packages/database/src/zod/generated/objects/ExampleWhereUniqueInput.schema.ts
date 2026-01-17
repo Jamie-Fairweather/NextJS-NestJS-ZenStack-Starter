@@ -4,23 +4,30 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleWhereInputObjectSchema } from './ExampleWhereInput.schema';
-import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema';
-import { StringFilterObjectSchema } from './StringFilter.schema';
-import { UserScalarRelationFilterObjectSchema } from './UserScalarRelationFilter.schema';
-import { UserWhereInputObjectSchema } from './UserWhereInput.schema';
+import { z } from 'zod/v4'
+import { ExampleWhereInputObjectSchema } from './ExampleWhereInput.schema'
+import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema'
+import { StringFilterObjectSchema } from './StringFilter.schema'
+import { UserScalarRelationFilterObjectSchema } from './UserScalarRelationFilter.schema'
+import { UserWhereInputObjectSchema } from './UserWhereInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleWhereUniqueInput, Prisma.ExampleWhereUniqueInput>;
-export const ExampleWhereUniqueInputObjectSchema: SchemaType = z.object({
-    id: z.string().optional().optional(), AND: z.union([z.lazy(() => ExampleWhereInputObjectSchema),
-    z.lazy(() => ExampleWhereInputObjectSchema).array()]).optional(), OR: z.lazy(() => ExampleWhereInputObjectSchema).array().optional().optional(), NOT: z.union([z.lazy(() => ExampleWhereInputObjectSchema),
-    z.lazy(() => ExampleWhereInputObjectSchema).array()]).optional(), createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), ownerId: z.union([z.lazy(() => StringFilterObjectSchema),
-    z.string()]).optional(), name: z.union([z.lazy(() => StringFilterObjectSchema),
-    z.string()]).optional(), owner: z.union([z.lazy(() => UserScalarRelationFilterObjectSchema),
-    z.lazy(() => UserWhereInputObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleWhereUniqueInput, Prisma.ExampleWhereUniqueInput>
+export const ExampleWhereUniqueInputObjectSchema: SchemaType = z
+    .object({
+        id: z.string().optional().optional(),
+        AND: z.union([z.lazy(() => ExampleWhereInputObjectSchema), z.lazy(() => ExampleWhereInputObjectSchema).array()]).optional(),
+        OR: z
+            .lazy(() => ExampleWhereInputObjectSchema)
+            .array()
+            .optional()
+            .optional(),
+        NOT: z.union([z.lazy(() => ExampleWhereInputObjectSchema), z.lazy(() => ExampleWhereInputObjectSchema).array()]).optional(),
+        createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        ownerId: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
+        name: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
+        owner: z.union([z.lazy(() => UserScalarRelationFilterObjectSchema), z.lazy(() => UserWhereInputObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

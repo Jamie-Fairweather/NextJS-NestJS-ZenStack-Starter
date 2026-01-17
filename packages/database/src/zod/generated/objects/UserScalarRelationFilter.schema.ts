@@ -4,12 +4,21 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserWhereInputObjectSchema } from './UserWhereInput.schema';
+import { z } from 'zod/v4'
+import { UserWhereInputObjectSchema } from './UserWhereInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserScalarRelationFilter, Prisma.UserScalarRelationFilter>;
-export const UserScalarRelationFilterObjectSchema: SchemaType = z.object({
-    is: z.lazy(() => UserWhereInputObjectSchema).optional().optional(), isNot: z.lazy(() => UserWhereInputObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserScalarRelationFilter, Prisma.UserScalarRelationFilter>
+export const UserScalarRelationFilterObjectSchema: SchemaType = z
+    .object({
+        is: z
+            .lazy(() => UserWhereInputObjectSchema)
+            .optional()
+            .optional(),
+        isNot: z
+            .lazy(() => UserWhereInputObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

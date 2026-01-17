@@ -4,9 +4,10 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-const baseSchema = z.object({
-    id: z.string(),
-}
-).strict();
-export const authSchema = baseSchema;
+import { z } from 'zod/v4'
+const baseSchema = z
+    .object({
+        id: z.string(),
+    })
+    .strict()
+export const authSchema = baseSchema

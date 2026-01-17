@@ -4,104 +4,115 @@
 
 /* eslint-disable */
 
-import type { ModelMeta } from "@zenstackhq/runtime";
+import type { ModelMeta } from '@zenstackhq/runtime'
 
 const metadata: ModelMeta = {
     models: {
         user: {
-            name: 'User', fields: {
+            name: 'User',
+            fields: {
                 id: {
-                    name: "id",
-                    type: "String",
+                    name: 'id',
+                    type: 'String',
                     isId: true,
-                    attributes: [{ "name": "@default", "args": [{ "name": "value" }] }],
-                }, createdAt: {
-                    name: "createdAt",
-                    type: "DateTime",
-                    attributes: [{ "name": "@default", "args": [{ "name": "value" }] }],
-                }, updatedAt: {
-                    name: "updatedAt",
-                    type: "DateTime",
-                    attributes: [{ "name": "@updatedAt", "args": [] }],
-                }, authId: {
-                    name: "authId",
-                    type: "String",
-                }, role: {
-                    name: "role",
-                    type: "Role",
-                    attributes: [{ "name": "@default", "args": [{ "name": "value" }] }],
-                }, examples: {
-                    name: "examples",
-                    type: "Example",
+                    attributes: [{ name: '@default', args: [{ name: 'value' }] }],
+                },
+                createdAt: {
+                    name: 'createdAt',
+                    type: 'DateTime',
+                    attributes: [{ name: '@default', args: [{ name: 'value' }] }],
+                },
+                updatedAt: {
+                    name: 'updatedAt',
+                    type: 'DateTime',
+                    attributes: [{ name: '@updatedAt', args: [] }],
+                },
+                authId: {
+                    name: 'authId',
+                    type: 'String',
+                },
+                role: {
+                    name: 'role',
+                    type: 'Role',
+                    attributes: [{ name: '@default', args: [{ name: 'value' }] }],
+                },
+                examples: {
+                    name: 'examples',
+                    type: 'Example',
                     isDataModel: true,
                     isArray: true,
                     backLink: 'owner',
                 },
-            }, uniqueConstraints: {
+            },
+            uniqueConstraints: {
                 id: {
-                    name: "id",
-                    fields: ["id"]
-                }, authId: {
-                    name: "authId",
-                    fields: ["authId"]
+                    name: 'id',
+                    fields: ['id'],
+                },
+                authId: {
+                    name: 'authId',
+                    fields: ['authId'],
                 },
             },
         },
         example: {
-            name: 'Example', fields: {
+            name: 'Example',
+            fields: {
                 id: {
-                    name: "id",
-                    type: "String",
+                    name: 'id',
+                    type: 'String',
                     isId: true,
-                    attributes: [{ "name": "@default", "args": [{ "name": "value" }] }],
-                }, createdAt: {
-                    name: "createdAt",
-                    type: "DateTime",
-                    attributes: [{ "name": "@default", "args": [{ "name": "value" }] }],
-                }, updatedAt: {
-                    name: "updatedAt",
-                    type: "DateTime",
-                    attributes: [{ "name": "@updatedAt", "args": [] }],
-                }, ownerId: {
-                    name: "ownerId",
-                    type: "String",
+                    attributes: [{ name: '@default', args: [{ name: 'value' }] }],
+                },
+                createdAt: {
+                    name: 'createdAt',
+                    type: 'DateTime',
+                    attributes: [{ name: '@default', args: [{ name: 'value' }] }],
+                },
+                updatedAt: {
+                    name: 'updatedAt',
+                    type: 'DateTime',
+                    attributes: [{ name: '@updatedAt', args: [] }],
+                },
+                ownerId: {
+                    name: 'ownerId',
+                    type: 'String',
                     isForeignKey: true,
                     relationField: 'owner',
-                }, owner: {
-                    name: "owner",
-                    type: "User",
+                },
+                owner: {
+                    name: 'owner',
+                    type: 'User',
                     isDataModel: true,
                     backLink: 'examples',
                     isRelationOwner: true,
-                    foreignKeyMapping: { "id": "ownerId" },
-                }, name: {
-                    name: "name",
-                    type: "String",
+                    foreignKeyMapping: { id: 'ownerId' },
                 },
-            }, uniqueConstraints: {
+                name: {
+                    name: 'name',
+                    type: 'String',
+                },
+            },
+            uniqueConstraints: {
                 id: {
-                    name: "id",
-                    fields: ["id"]
+                    name: 'id',
+                    fields: ['id'],
                 },
             },
         },
-
     },
     typeDefs: {
         auth: {
-            name: 'auth', fields: {
+            name: 'auth',
+            fields: {
                 id: {
-                    name: "id",
-                    type: "String",
+                    name: 'id',
+                    type: 'String',
                 },
             },
         },
-
     },
-    deleteCascade: {
-
-    },
-    authModel: 'auth'
-
-};
-export default metadata;
+    deleteCascade: {},
+    authModel: 'auth',
+}
+export default metadata

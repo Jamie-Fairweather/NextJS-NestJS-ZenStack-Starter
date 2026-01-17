@@ -4,12 +4,13 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
-
-type SchemaType = z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput, Prisma.DateTimeFieldUpdateOperationsInput>;
-export const DateTimeFieldUpdateOperationsInputObjectSchema: SchemaType = z.object({
-    set: z.union([z.date().optional(), z.string().datetime().optional()]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput, Prisma.DateTimeFieldUpdateOperationsInput>
+export const DateTimeFieldUpdateOperationsInputObjectSchema: SchemaType = z
+    .object({
+        set: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+    })
+    .strict() as SchemaType

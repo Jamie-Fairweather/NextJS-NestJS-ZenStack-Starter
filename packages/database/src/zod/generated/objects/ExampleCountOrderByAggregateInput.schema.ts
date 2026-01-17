@@ -4,12 +4,33 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { SortOrderSchema } from '../enums/SortOrder.schema';
+import { z } from 'zod/v4'
+import { SortOrderSchema } from '../enums/SortOrder.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleCountOrderByAggregateInput, Prisma.ExampleCountOrderByAggregateInput>;
-export const ExampleCountOrderByAggregateInputObjectSchema: SchemaType = z.object({
-    id: z.lazy(() => SortOrderSchema).optional().optional(), createdAt: z.lazy(() => SortOrderSchema).optional().optional(), updatedAt: z.lazy(() => SortOrderSchema).optional().optional(), ownerId: z.lazy(() => SortOrderSchema).optional().optional(), name: z.lazy(() => SortOrderSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleCountOrderByAggregateInput, Prisma.ExampleCountOrderByAggregateInput>
+export const ExampleCountOrderByAggregateInputObjectSchema: SchemaType = z
+    .object({
+        id: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        createdAt: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        updatedAt: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        ownerId: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+        name: z
+            .lazy(() => SortOrderSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

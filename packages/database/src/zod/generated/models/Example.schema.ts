@@ -4,83 +4,80 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-const baseSchema = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date().default(() => new Date()),
-    updatedAt: z.coerce.date(),
-    name: z.string(),
-}
-).strict();
-const baseSchemaWithoutDefaults = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date(),
-    updatedAt: z.coerce.date(),
-    name: z.string(),
-}
-).strict();
+import { z } from 'zod/v4'
+const baseSchema = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date().default(() => new Date()),
+        updatedAt: z.coerce.date(),
+        name: z.string(),
+    })
+    .strict()
+const baseSchemaWithoutDefaults = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date(),
+        updatedAt: z.coerce.date(),
+        name: z.string(),
+    })
+    .strict()
 const relationSchema = z.object({
     owner: z.record(z.string(), z.unknown()),
-}
-);
+})
 const fkSchema = z.object({
     ownerId: z.string(),
-}
-);
+})
 
 /**
  * `Example` schema excluding foreign keys and relations.
  */
-export const ExampleScalarSchema = baseSchema;
-
+export const ExampleScalarSchema = baseSchema
 
 /**
  * `Example` schema including all fields (scalar, foreign key, and relations) and validations.
  */
-export const ExampleSchema = ExampleScalarSchema.merge(fkSchema).merge(relationSchema.partial());
-
+export const ExampleSchema = ExampleScalarSchema.merge(fkSchema).merge(relationSchema.partial())
 
 /**
  * Schema used for validating Prisma create input. For internal use only.
  * @private
  */
-export const ExamplePrismaCreateSchema = baseSchemaWithoutDefaults.partial().passthrough();
-
+export const ExamplePrismaCreateSchema = baseSchemaWithoutDefaults.partial().passthrough()
 
 /**
  * Schema used for validating Prisma update input. For internal use only.
  * @private
  */
-export const ExamplePrismaUpdateSchema = z.object({
-    id: z.string(),
-    createdAt: z.coerce.date(),
-    updatedAt: z.coerce.date(),
-    name: z.string()
-}).partial().passthrough();
-
+export const ExamplePrismaUpdateSchema = z
+    .object({
+        id: z.string(),
+        createdAt: z.coerce.date(),
+        updatedAt: z.coerce.date(),
+        name: z.string(),
+    })
+    .partial()
+    .passthrough()
 
 /**
  * `Example` schema for create operations excluding foreign keys and relations.
  */
 export const ExampleCreateScalarSchema = baseSchemaWithoutDefaults.partial({
-    id: true, createdAt: true, updatedAt: true
-});
-
+    id: true,
+    createdAt: true,
+    updatedAt: true,
+})
 
 /**
  * `Example` schema for create operations including scalar fields, foreign key fields, and validations.
  */
-export const ExampleCreateSchema = ExampleCreateScalarSchema.merge(fkSchema);
-
+export const ExampleCreateSchema = ExampleCreateScalarSchema.merge(fkSchema)
 
 /**
  * `Example` schema for update operations excluding foreign keys and relations.
  */
-export const ExampleUpdateScalarSchema = baseSchemaWithoutDefaults.partial();
-
+export const ExampleUpdateScalarSchema = baseSchemaWithoutDefaults.partial()
 
 /**
  * `Example` schema for update operations including scalar fields, foreign key fields, and validations.
  */
-export const ExampleUpdateSchema = ExampleUpdateScalarSchema.merge(fkSchema.partial());
-
+export const ExampleUpdateSchema = ExampleUpdateScalarSchema.merge(fkSchema.partial())

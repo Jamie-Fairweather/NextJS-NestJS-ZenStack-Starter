@@ -4,5 +4,5 @@
 
 /* eslint-disable */
 
-export * from './UserInput.schema';
+export * from './UserInput.schema'
 export * from './ExampleInput.schema'

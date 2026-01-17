@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
-export const TransactionIsolationLevelSchema = z.enum(["ReadUncommitted", "ReadCommitted", "RepeatableRead", "Serializable"])
+export const TransactionIsolationLevelSchema = z.enum(['ReadUncommitted', 'ReadCommitted', 'RepeatableRead', 'Serializable'])

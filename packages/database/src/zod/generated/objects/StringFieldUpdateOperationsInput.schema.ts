@@ -4,12 +4,13 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
-
-type SchemaType = z.ZodType<Prisma.StringFieldUpdateOperationsInput, Prisma.StringFieldUpdateOperationsInput>;
-export const StringFieldUpdateOperationsInputObjectSchema: SchemaType = z.object({
-    set: z.string().optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.StringFieldUpdateOperationsInput, Prisma.StringFieldUpdateOperationsInput>
+export const StringFieldUpdateOperationsInputObjectSchema: SchemaType = z
+    .object({
+        set: z.string().optional().optional(),
+    })
+    .strict() as SchemaType

@@ -4,14 +4,20 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema';
-import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema';
-import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema';
+import { z } from 'zod/v4'
+import { UserWhereUniqueInputObjectSchema } from './UserWhereUniqueInput.schema'
+import { UserCreateWithoutExamplesInputObjectSchema } from './UserCreateWithoutExamplesInput.schema'
+import { UserUncheckedCreateWithoutExamplesInputObjectSchema } from './UserUncheckedCreateWithoutExamplesInput.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserCreateOrConnectWithoutExamplesInput, Prisma.UserCreateOrConnectWithoutExamplesInput>;
-export const UserCreateOrConnectWithoutExamplesInputObjectSchema: SchemaType = z.object({
-    where: z.lazy(() => UserWhereUniqueInputObjectSchema), create: z.union([z.lazy(() => UserCreateWithoutExamplesInputObjectSchema), z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema)])
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserCreateOrConnectWithoutExamplesInput, Prisma.UserCreateOrConnectWithoutExamplesInput>
+export const UserCreateOrConnectWithoutExamplesInputObjectSchema: SchemaType = z
+    .object({
+        where: z.lazy(() => UserWhereUniqueInputObjectSchema),
+        create: z.union([
+            z.lazy(() => UserCreateWithoutExamplesInputObjectSchema),
+            z.lazy(() => UserUncheckedCreateWithoutExamplesInputObjectSchema),
+        ]),
+    })
+    .strict() as SchemaType

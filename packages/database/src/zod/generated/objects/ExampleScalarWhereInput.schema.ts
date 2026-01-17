@@ -4,20 +4,26 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { StringFilterObjectSchema } from './StringFilter.schema';
-import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema';
+import { z } from 'zod/v4'
+import { StringFilterObjectSchema } from './StringFilter.schema'
+import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.ExampleScalarWhereInput, Prisma.ExampleScalarWhereInput>;
-export const ExampleScalarWhereInputObjectSchema: SchemaType = z.object({
-    AND: z.union([z.lazy(() => ExampleScalarWhereInputObjectSchema),
-    z.lazy(() => ExampleScalarWhereInputObjectSchema).array()]).optional(), OR: z.lazy(() => ExampleScalarWhereInputObjectSchema).array().optional().optional(), NOT: z.union([z.lazy(() => ExampleScalarWhereInputObjectSchema),
-    z.lazy(() => ExampleScalarWhereInputObjectSchema).array()]).optional(), id: z.union([z.lazy(() => StringFilterObjectSchema),
-    z.string()]).optional(), createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), ownerId: z.union([z.lazy(() => StringFilterObjectSchema),
-    z.string()]).optional(), name: z.union([z.lazy(() => StringFilterObjectSchema),
-    z.string()]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleScalarWhereInput, Prisma.ExampleScalarWhereInput>
+export const ExampleScalarWhereInputObjectSchema: SchemaType = z
+    .object({
+        AND: z.union([z.lazy(() => ExampleScalarWhereInputObjectSchema), z.lazy(() => ExampleScalarWhereInputObjectSchema).array()]).optional(),
+        OR: z
+            .lazy(() => ExampleScalarWhereInputObjectSchema)
+            .array()
+            .optional()
+            .optional(),
+        NOT: z.union([z.lazy(() => ExampleScalarWhereInputObjectSchema), z.lazy(() => ExampleScalarWhereInputObjectSchema).array()]).optional(),
+        id: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
+        createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        ownerId: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
+        name: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
+    })
+    .strict() as SchemaType

@@ -4,21 +4,33 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { UserWhereInputObjectSchema } from './UserWhereInput.schema';
-import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema';
-import { EnumRoleFilterObjectSchema } from './EnumRoleFilter.schema';
-import { RoleSchema } from '../enums/Role.schema';
-import { ExampleListRelationFilterObjectSchema } from './ExampleListRelationFilter.schema';
+import { z } from 'zod/v4'
+import { UserWhereInputObjectSchema } from './UserWhereInput.schema'
+import { DateTimeFilterObjectSchema } from './DateTimeFilter.schema'
+import { EnumRoleFilterObjectSchema } from './EnumRoleFilter.schema'
+import { RoleSchema } from '../enums/Role.schema'
+import { ExampleListRelationFilterObjectSchema } from './ExampleListRelationFilter.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserWhereUniqueInput, Prisma.UserWhereUniqueInput>;
-export const UserWhereUniqueInputObjectSchema: SchemaType = z.object({
-    id: z.string().optional().optional(), authId: z.string().optional().optional(), AND: z.union([z.lazy(() => UserWhereInputObjectSchema),
-    z.lazy(() => UserWhereInputObjectSchema).array()]).optional(), OR: z.lazy(() => UserWhereInputObjectSchema).array().optional().optional(), NOT: z.union([z.lazy(() => UserWhereInputObjectSchema),
-    z.lazy(() => UserWhereInputObjectSchema).array()]).optional(), createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema),
-    z.union([z.date(), z.string().datetime().optional()])]).optional(), role: z.union([z.lazy(() => EnumRoleFilterObjectSchema),
-    z.lazy(() => RoleSchema)]).optional(), examples: z.lazy(() => ExampleListRelationFilterObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserWhereUniqueInput, Prisma.UserWhereUniqueInput>
+export const UserWhereUniqueInputObjectSchema: SchemaType = z
+    .object({
+        id: z.string().optional().optional(),
+        authId: z.string().optional().optional(),
+        AND: z.union([z.lazy(() => UserWhereInputObjectSchema), z.lazy(() => UserWhereInputObjectSchema).array()]).optional(),
+        OR: z
+            .lazy(() => UserWhereInputObjectSchema)
+            .array()
+            .optional()
+            .optional(),
+        NOT: z.union([z.lazy(() => UserWhereInputObjectSchema), z.lazy(() => UserWhereInputObjectSchema).array()]).optional(),
+        createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.union([z.date(), z.string().datetime().optional()])]).optional(),
+        role: z.union([z.lazy(() => EnumRoleFilterObjectSchema), z.lazy(() => RoleSchema)]).optional(),
+        examples: z
+            .lazy(() => ExampleListRelationFilterObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

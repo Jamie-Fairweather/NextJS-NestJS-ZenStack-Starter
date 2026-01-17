@@ -4,6 +4,6 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
-export const ExampleScalarFieldEnumSchema = z.enum(["id", "createdAt", "updatedAt", "ownerId", "name"])
+export const ExampleScalarFieldEnumSchema = z.enum(['id', 'createdAt', 'updatedAt', 'ownerId', 'name'])

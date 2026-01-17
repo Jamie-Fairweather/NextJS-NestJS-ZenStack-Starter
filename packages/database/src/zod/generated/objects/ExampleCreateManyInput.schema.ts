@@ -4,12 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
-
-type SchemaType = z.ZodType<Prisma.ExampleCreateManyInput, Prisma.ExampleCreateManyInput>;
-export const ExampleCreateManyInputObjectSchema: SchemaType = z.object({
-    id: z.string().optional().optional(), createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(), ownerId: z.string(), name: z.string()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.ExampleCreateManyInput, Prisma.ExampleCreateManyInput>
+export const ExampleCreateManyInputObjectSchema: SchemaType = z
+    .object({
+        id: z.string().optional().optional(),
+        createdAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        updatedAt: z.union([z.date().optional(), z.string().datetime().optional()]).optional(),
+        ownerId: z.string(),
+        name: z.string(),
+    })
+    .strict() as SchemaType

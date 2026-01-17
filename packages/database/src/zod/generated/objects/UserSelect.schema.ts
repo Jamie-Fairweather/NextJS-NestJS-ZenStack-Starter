@@ -4,15 +4,21 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { ExampleInputSchema } from '../input/ExampleInput.schema';
-import { UserCountOutputTypeDefaultArgsObjectSchema } from './UserCountOutputTypeDefaultArgs.schema';
+import { z } from 'zod/v4'
+import { ExampleInputSchema } from '../input/ExampleInput.schema'
+import { UserCountOutputTypeDefaultArgsObjectSchema } from './UserCountOutputTypeDefaultArgs.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.UserSelect, Prisma.UserSelect>;
-export const UserSelectObjectSchema: SchemaType = z.object({
-    id: z.boolean().optional().optional(), createdAt: z.boolean().optional().optional(), updatedAt: z.boolean().optional().optional(), authId: z.boolean().optional().optional(), role: z.boolean().optional().optional(), examples: z.union([z.boolean(),
-    z.lazy(() => ExampleInputSchema.findMany)]).optional(), _count: z.union([z.boolean(),
-    z.lazy(() => UserCountOutputTypeDefaultArgsObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.UserSelect, Prisma.UserSelect>
+export const UserSelectObjectSchema: SchemaType = z
+    .object({
+        id: z.boolean().optional().optional(),
+        createdAt: z.boolean().optional().optional(),
+        updatedAt: z.boolean().optional().optional(),
+        authId: z.boolean().optional().optional(),
+        role: z.boolean().optional().optional(),
+        examples: z.union([z.boolean(), z.lazy(() => ExampleInputSchema.findMany)]).optional(),
+        _count: z.union([z.boolean(), z.lazy(() => UserCountOutputTypeDefaultArgsObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

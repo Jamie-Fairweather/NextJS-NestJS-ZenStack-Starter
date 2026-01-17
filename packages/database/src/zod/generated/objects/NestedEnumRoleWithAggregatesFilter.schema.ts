@@ -4,15 +4,42 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-import { RoleSchema } from '../enums/Role.schema';
-import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema';
-import { NestedEnumRoleFilterObjectSchema } from './NestedEnumRoleFilter.schema';
+import { z } from 'zod/v4'
+import { RoleSchema } from '../enums/Role.schema'
+import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema'
+import { NestedEnumRoleFilterObjectSchema } from './NestedEnumRoleFilter.schema'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-type SchemaType = z.ZodType<Prisma.NestedEnumRoleWithAggregatesFilter, Prisma.NestedEnumRoleWithAggregatesFilter>;
-export const NestedEnumRoleWithAggregatesFilterObjectSchema: SchemaType = z.object({
-    equals: z.lazy(() => RoleSchema).optional().optional(), in: z.lazy(() => RoleSchema).array().optional().optional(), notIn: z.lazy(() => RoleSchema).array().optional().optional(), not: z.union([z.lazy(() => RoleSchema),
-    z.lazy(() => NestedEnumRoleWithAggregatesFilterObjectSchema)]).optional(), _count: z.lazy(() => NestedIntFilterObjectSchema).optional().optional(), _min: z.lazy(() => NestedEnumRoleFilterObjectSchema).optional().optional(), _max: z.lazy(() => NestedEnumRoleFilterObjectSchema).optional().optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.NestedEnumRoleWithAggregatesFilter, Prisma.NestedEnumRoleWithAggregatesFilter>
+export const NestedEnumRoleWithAggregatesFilterObjectSchema: SchemaType = z
+    .object({
+        equals: z
+            .lazy(() => RoleSchema)
+            .optional()
+            .optional(),
+        in: z
+            .lazy(() => RoleSchema)
+            .array()
+            .optional()
+            .optional(),
+        notIn: z
+            .lazy(() => RoleSchema)
+            .array()
+            .optional()
+            .optional(),
+        not: z.union([z.lazy(() => RoleSchema), z.lazy(() => NestedEnumRoleWithAggregatesFilterObjectSchema)]).optional(),
+        _count: z
+            .lazy(() => NestedIntFilterObjectSchema)
+            .optional()
+            .optional(),
+        _min: z
+            .lazy(() => NestedEnumRoleFilterObjectSchema)
+            .optional()
+            .optional(),
+        _max: z
+            .lazy(() => NestedEnumRoleFilterObjectSchema)
+            .optional()
+            .optional(),
+    })
+    .strict() as SchemaType

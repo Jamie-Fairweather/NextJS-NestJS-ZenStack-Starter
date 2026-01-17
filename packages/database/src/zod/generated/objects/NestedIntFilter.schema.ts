@@ -4,13 +4,20 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
+import { z } from 'zod/v4'
 
+import type { Prisma } from '@zenstackhq/runtime/models'
 
-import type { Prisma } from '@zenstackhq/runtime/models';
-
-type SchemaType = z.ZodType<Prisma.NestedIntFilter, Prisma.NestedIntFilter>;
-export const NestedIntFilterObjectSchema: SchemaType = z.object({
-    equals: z.number().optional().optional(), in: z.number().array().optional().optional(), notIn: z.number().array().optional().optional(), lt: z.number().optional().optional(), lte: z.number().optional().optional(), gt: z.number().optional().optional(), gte: z.number().optional().optional(), not: z.union([z.number(),
-    z.lazy(() => NestedIntFilterObjectSchema)]).optional()
-}).strict() as SchemaType;
+type SchemaType = z.ZodType<Prisma.NestedIntFilter, Prisma.NestedIntFilter>
+export const NestedIntFilterObjectSchema: SchemaType = z
+    .object({
+        equals: z.number().optional().optional(),
+        in: z.number().array().optional().optional(),
+        notIn: z.number().array().optional().optional(),
+        lt: z.number().optional().optional(),
+        lte: z.number().optional().optional(),
+        gt: z.number().optional().optional(),
+        gte: z.number().optional().optional(),
+        not: z.union([z.number(), z.lazy(() => NestedIntFilterObjectSchema)]).optional(),
+    })
+    .strict() as SchemaType

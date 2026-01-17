@@ -4,14 +4,17 @@
 
 /* eslint-disable */
 
-import { z } from 'zod/v4';
-export const DecimalSchema = z.any().refine((val) => {
-    if (typeof val === 'string' || typeof val === 'number') {
-        return true;
-    }
-    // Decimal.js shape
-    if (typeof val === 'object' && val && Array.isArray(val.d) && typeof val.e === 'number' && typeof val.s === 'number') {
-        return true;
-    }
-    return false;
-}, { message: 'Not a valid Decimal value' });
+import { z } from 'zod/v4'
+export const DecimalSchema = z.any().refine(
+    (val) => {
+        if (typeof val === 'string' || typeof val === 'number') {
+            return true
+        }
+        // Decimal.js shape
+        if (typeof val === 'object' && val && Array.isArray(val.d) && typeof val.e === 'number' && typeof val.s === 'number') {
+            return true
+        }
+        return false
+    },
+    { message: 'Not a valid Decimal value' }
+)
