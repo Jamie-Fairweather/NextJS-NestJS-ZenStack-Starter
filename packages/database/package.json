@@ -19,7 +19,7 @@
         "@zenstackhq/openapi": "^2.22.2",
         "@zenstackhq/tanstack-query": "^2.22.2",
         "@zenstackhq/trpc": "^2.22.2",
-        "prisma": "^6.19.2",
+        "prisma": "^7.2.0",
         "typescript": "^5.9.3",
         "zenstack": "^2.22.2"
     },
