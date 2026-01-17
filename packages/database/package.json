@@ -17,7 +17,7 @@
     "packageManager": "pnpm@10.4.1",
     "devDependencies": {
         "@zenstackhq/openapi": "^2.22.2",
-        "@zenstackhq/tanstack-query": "^2.22.2",
+        "@zenstackhq/tanstack-query": "^3.2.1",
         "@zenstackhq/trpc": "^2.22.2",
         "prisma": "^6.19.2",
         "typescript": "^5.9.3",
