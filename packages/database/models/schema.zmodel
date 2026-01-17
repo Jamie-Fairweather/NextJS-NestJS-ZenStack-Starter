@@ -1,0 +1,43 @@
+import "auth"
+import "user"
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+plugin Zod {
+  provider = '@core/zod'
+  output = "./../src/zod/generated"
+  version = "v4"
+  compile = false
+}
+
+plugin Hooks {
+  provider = '@zenstackhq/tanstack-query'
+  output = "./../src/hooks/generated"
+  target = "react"
+  portable = true
+}
+
+plugin Openapi {
+  provider = '@zenstackhq/openapi'
+  output = "./../src/openapi/spec.json"
+  prefix = '/crud'
+  flavor = "rpc"
+  title = "API (CRUD)"
+}
+
+// plugin Trpc {
+//   provider = '@zenstackhq/trpc'
+//   output = './../src/trpc/generated'
+//   zodSchemasImport = '../../../zod/generated'
+//   version = "v11"
+//   importCreateRouter = "../../trpc"
+//   importProcedure = "../../trpc"
+// }

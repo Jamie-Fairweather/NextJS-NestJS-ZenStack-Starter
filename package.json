@@ -1,0 +1,27 @@
+{
+    "name": "clipzen",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "turbo start",
+        "build": "turbo build",
+        "build:packages": "turbo build --filter=@workspace/core --filter=@workspace/contracts",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md,mjs,json}\"",
+        "format:database": "prettier --write --ignore-path .prettierignore.empty \"packages/database/**/*.{ts,tsx,md,mjs,json}\"",
+        "generate:dev": "turbo generate:dev && pnpm format:database"
+    },
+    "devDependencies": {
+        "@types/node": "^25.0.9",
+        "@workspace/eslint-config": "workspace:*",
+        "@workspace/typescript-config": "workspace:*",
+        "prettier": "^3.8.0",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+        "turbo": "^2.7.5"
+    },
+    "packageManager": "pnpm@10.28.0",
+    "engines": {
+        "node": ">=20"
+    }
+}

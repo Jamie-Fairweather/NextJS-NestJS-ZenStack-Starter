@@ -1,0 +1,13 @@
+{
+    "extends": "@workspace/typescript-config/base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/schemas/*": ["./src/schemas/*.schema.ts"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}

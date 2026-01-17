@@ -1,0 +1,18 @@
+import "base"
+import "example"
+
+enum Role {
+    USER
+}
+
+model User extends Base {
+    authId String  @unique
+    role   Role    @default(USER)
+    examples Example[]
+    
+    @@index([createdAt])
+
+    @@allow('create', true)
+    @@allow('read,update,delete', auth().id == authId)
+}
+

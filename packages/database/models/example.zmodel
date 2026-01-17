@@ -1,0 +1,12 @@
+import "base"
+import "user"
+
+model Example extends Base {
+    ownerId String
+    owner User @relation(fields: [ownerId], references: [id])
+    name String
+
+    @@index([createdAt])
+    @@allow('all', auth().id == owner.authId)
+}
+

@@ -1,0 +1,13 @@
+{
+    "extends": "@workspace/typescript-config/base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/contracts/*": ["./src/*.contract.ts"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}

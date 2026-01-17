@@ -1,0 +1,142 @@
+{
+    "name": "@workspace/database",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "generate": "zenstack generate",
+        "generate:dev": "zenstack generate && prisma migrate dev --name \"migration\"",
+        "migrate": "prisma migrate",
+        "push": "prisma db push",
+        "studio": "prisma studio",
+        "dev": "prisma studio"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.4.1",
+    "devDependencies": {
+        "@zenstackhq/openapi": "^2.22.2",
+        "@zenstackhq/tanstack-query": "^2.22.2",
+        "@zenstackhq/trpc": "^2.22.2",
+        "prisma": "^6.19.2",
+        "typescript": "^5.9.3",
+        "zenstack": "^2.22.2"
+    },
+    "dependencies": {
+        "@prisma/client": "^6.19.2",
+        "@tanstack/react-query": "^5.90.18",
+        "@trpc/server": "^11.8.1",
+        "@zenstackhq/runtime": "^2.22.2",
+        "zod": "^4.3.5"
+    },
+    "exports": {
+        "./prisma": {
+            "import": "./src/prisma/index.ts",
+            "require": "./src/prisma/index.ts"
+        },
+        "./trpc/client": {
+            "import": "./src/trpc/generated/client/index.ts",
+            "require": "./src/trpc/generated/client/index.ts"
+        },
+        "./trpc/routers": {
+            "import": "./src/trpc/generated/routers/index.ts",
+            "require": "./src/trpc/generated/routers/index.ts"
+        },
+        "./hooks": {
+            "import": "./src/hooks/index.ts",
+            "require": "./src/hooks/index.ts"
+        },
+        "./trpc/context": {
+            "import": "./src/trpc/context.ts",
+            "require": "./src/trpc/context.ts"
+        },
+        "./openapi": {
+            "import": "./src/openapi/spec.json",
+            "require": "./src/openapi/spec.json"
+        },
+        "./zod": {
+            "import": "./src/zod/generated/index.ts",
+            "require": "./src/zod/generated/index.ts"
+        },
+        "./zod/enums": {
+            "import": "./src/zod/generated/enums/index.ts",
+            "require": "./src/zod/generated/enums/index.ts"
+        },
+        "./zod/objects": {
+            "import": "./src/zod/generated/objects/index.ts",
+            "require": "./src/zod/generated/objects/index.ts"
+        },
+        "./zod/input": {
+            "import": "./src/zod/generated/input/index.ts",
+            "require": "./src/zod/generated/input/index.ts"
+        },
+        "./zod/common": {
+            "import": "./src/zod/generated/common/index.ts",
+            "require": "./src/zod/generated/common/index.ts"
+        },
+        "./zod/models": {
+            "import": "./src/zod/generated/models/index.ts",
+            "require": "./src/zod/generated/models/index.ts"
+        },
+        "./trpc": {
+            "import": "./src/trpc/trpc.ts",
+            "require": "./src/trpc/trpc.ts"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "prisma": [
+                "./src/prisma/index.ts"
+            ],
+            "trpc/client": [
+                "./src/trpc/generated/client/index.ts"
+            ],
+            "trpc/routers": [
+                "./src/trpc/generated/routers/index.ts"
+            ],
+            "hooks": [
+                "./src/hooks/index.ts"
+            ],
+            "trpc/context": [
+                "./src/trpc/context.ts"
+            ],
+            "openapi": [
+                "./src/openapi/spec.json"
+            ],
+            "zod": [
+                "./src/zod/generated/index.ts"
+            ],
+            "zod/enums": [
+                "./src/zod/generated/enums/index.ts"
+            ],
+            "zod/objects": [
+                "./src/zod/generated/objects/index.ts"
+            ],
+            "zod/input": [
+                "./src/zod/generated/input/index.ts"
+            ],
+            "zod/common": [
+                "./src/zod/generated/common/index.ts"
+            ],
+            "zod/models": [
+                "./src/zod/generated/models/index.ts"
+            ],
+            "trpc": [
+                "./src/trpc/trpc.ts"
+            ]
+        }
+    },
+    "paths": {
+        "@trpc/server/*": [
+            "./node_modules/@trpc/server/*"
+        ]
+    },
+    "zenstack": {
+        "schema": "./models/schema.zmodel",
+        "prisma": "./prisma/schema.prisma"
+    },
+    "prisma": {
+        "schema": "./prisma/schema.prisma"
+    }
+}

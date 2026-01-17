@@ -1,0 +1,5 @@
+type auth {
+    id String @id
+
+    @@auth
+}

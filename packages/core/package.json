@@ -1,0 +1,23 @@
+{
+    "name": "@workspace/core",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "exports": {
+        "./schemas/*": "./dist/schemas/*.schema.js",
+        "./types/*": "./dist/types/*.type.js",
+        "./interfaces/*": "./dist/interfaces/*.interface.js",
+        "./maps/*": "./dist/maps/*.map.js"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@workspace/database": "workspace:*",
+        "zod": "^4.3.5"
+    },
+    "devDependencies": {
+        "@workspace/typescript-config": "workspace:*",
+        "typescript": "^5.9.3"
+    }
+}
